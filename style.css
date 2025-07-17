@@ -1,3 +1,4 @@
+/* Styles for twinkling star animation */
 .star {
   position: fixed;
   background-color: #fff;
@@ -20,6 +21,7 @@
   }
 }
 
+/* Styling for h3 elements */
 h3 {
   display: block;
   color: rgb(121, 71, 109);
@@ -32,6 +34,7 @@ h3 {
   unicode-bidi: isolate;
 }
 
+/* General body styling */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -43,6 +46,7 @@ body {
   transform: translate3d(0, 0, 0);
 }
 
+/* Header styling with animated gradient background */
 header {
   background: linear-gradient(-45deg, #1e1e1e, #722750, #997e8f, #601a1a);
   background-size: 400% 400%;
@@ -63,6 +67,7 @@ header {
   }
 }
 
+/* Container for header content */
 .header-container {
   display: flex;
   align-items: center;
@@ -74,6 +79,7 @@ header {
   position: relative;
 }
 
+/* Profile picture styling */
 .profile-pic {
   width: 120px;
   height: 120px;
@@ -83,32 +89,34 @@ header {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Navigation link styling */
 nav a {
-  color: white; 
+  color: white;
   margin: 0 0.5em;
   text-decoration: none;
   font-weight: bold;
   padding: 0.4em 0.9em;
-  border: 2px solid rgba(255, 255, 255, 0.3); 
+  border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 8px;
   transition: all 0.3s ease;
   display: inline-block;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); 
-  background-color: rgba(151, 69, 118, 0.3); 
-  backdrop-filter: blur(5px); 
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  background-color: rgba(151, 69, 118, 0.3);
+  backdrop-filter: blur(5px);
   position: relative;
   z-index: 2;
 }
 
 nav a:hover {
-  background-color: rgba(151, 69, 118, 0.7); 
+  background-color: rgba(151, 69, 118, 0.7);
   color: white;
   transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); 
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
   border-color: white;
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.7); 
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
 }
 
+/* Section styling */
 section {
   padding: 2em;
   max-width: 800px;
@@ -118,12 +126,14 @@ section {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Styling for h2 elements */
 h2 {
   color: #1e1e1e;
   border-bottom: 2px solid rgb(50, 48, 48);
   padding-bottom: 0.3em;
 }
 
+/* Project card styling */
 .project {
   margin-bottom: 1.5em;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -139,6 +149,7 @@ h2 {
   opacity: 0.9;
 }
 
+/* Footer styling */
 footer {
   text-align: center;
   padding: 1.5em;
@@ -150,6 +161,7 @@ footer {
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Truncatable content styling */
 .truncatable {
   max-height: 4.5em;
   overflow: hidden;
@@ -161,6 +173,7 @@ footer {
   max-height: 1000px;
 }
 
+/* Toggle button styling */
 .toggle-btn {
   background: none;
   border: none;
@@ -172,10 +185,11 @@ footer {
   text-decoration: underline;
 }
 
+/* Source link styling */
 .source-link {
   display: block;
   margin-top: 0.5em;
-  color: #974579; 
+  color: #974579;
   font-weight: bold;
   text-decoration: none;
 }
@@ -184,10 +198,12 @@ footer {
   text-decoration: underline;
 }
 
+/* Smooth scrolling behavior */
 html {
   scroll-behavior: smooth;
 }
 
+/* Contact section styling */
 #contact {
   padding: 2em;
   max-width: 800px;
@@ -213,7 +229,7 @@ html {
 .contact-item a:hover,
 .source-link:hover,
 .contact-card a:hover {
-  color: #722750; 
+  color: #722750;
   text-decoration: underline;
 }
 
@@ -235,6 +251,7 @@ html {
   text-decoration: underline;
 }
 
+/* Cursor trail effect */
 .cursor-trail {
   position: fixed;
   width: 20px;
@@ -247,6 +264,7 @@ html {
   transition: transform 0.1s ease, opacity 0.5s ease;
 }
 
+/* Profile image container styling */
 .profile-img-container {
   position: relative;
   cursor: pointer;
@@ -282,6 +300,7 @@ html {
   font-size: 1.2rem;
 }
 
+/* Header content styling */
 .header-content {
   display: flex;
   flex-direction: column;
@@ -294,6 +313,7 @@ html {
   margin-top: 1em;
 }
 
+/* Typewriter effect styling */
 .typewriter {
   display: inline-block;
   overflow: hidden;
@@ -328,6 +348,7 @@ html {
   }
 }
 
+/* Navigation link hover effect */
 .nav-link {
   transition: all 0.3s ease;
   position: relative;
@@ -348,6 +369,7 @@ html {
   width: 100%;
 }
 
+/* Contact grid styling */
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -367,7 +389,7 @@ html {
   position: relative;
   border: 1px solid #eee;
   margin-bottom: 10px;
-  align-items: center;  
+  align-items: center;
 }
 
 .contact-card:hover {
@@ -390,7 +412,7 @@ html {
 
 .contact-card p a {
   color: #974579;
-  text-decoration: none;    
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
@@ -398,7 +420,7 @@ html {
   color: #722750;
   text-decoration: underline;
   font-weight: bold;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); 
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .contact-card[data-tooltip]:hover::after {
@@ -416,6 +438,7 @@ html {
   margin-bottom: 10px;
 }
 
+/* Contact form styling */
 .contact-form {
   color: rgb(255, 255, 255);
   background: rgb(50, 48, 48);
@@ -444,6 +467,7 @@ html {
   outline: none;
 }
 
+/* Submit button styling */
 .submit-btn {
   background: linear-gradient(to right, #974579, #722750);
   color: white;
@@ -460,6 +484,7 @@ html {
   box-shadow: 0 5px 15px rgba(151, 69, 118, 0.4);
 }
 
+/* Social links styling */
 .social-links {
   display: flex;
   justify-content: center;
@@ -478,6 +503,7 @@ html {
   color: #ffcc00;
 }
 
+/* Back-to-top button styling */
 .back-to-top-btn {
   position: fixed;
   bottom: 30px;
@@ -503,6 +529,7 @@ html {
   transform: translateY(-3px);
 }
 
+/* Spinner animation */
 .fa-spinner {
   margin-right: 8px;
 }
@@ -520,6 +547,7 @@ html {
   animation: fa-spin 1s infinite linear;
 }
 
+/* Skills section styling */
 #skills {
   padding: 2em;
   max-width: 800px;
@@ -598,6 +626,7 @@ html {
   }
 }
 
+/* About section styling */
 #about {
   padding: 2em;
   max-width: 1000px;
@@ -722,13 +751,14 @@ html {
   }
 }
 
+/* Custom scrollbar styling */
 ::-webkit-scrollbar {
-  width: 12px; 
-  height: 12px; 
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(50, 48, 48); 
+  background: rgb(50, 48, 48);
   border-radius: 10px;
 }
 
@@ -736,7 +766,7 @@ html {
   background: linear-gradient(
     #974579,
     #722750
-  ); 
+  );
   border-radius: 10px;
   border: 2px solid rgb(50, 48, 48);
 }
@@ -750,6 +780,7 @@ html {
   scrollbar-color: #974579 rgb(50, 48, 48);
 }
 
+/* Status message styling */
 .status-message {
   color: rgba(255, 255, 255, 0.8);
   margin-top: 0.5em;
