@@ -1,3 +1,4 @@
+// Toggle button functionality to expand/collapse content
 document.querySelectorAll(".toggle-btn").forEach((button) => {
   button.addEventListener("click", () => {
     const para = button.previousElementSibling;
@@ -8,6 +9,7 @@ document.querySelectorAll(".toggle-btn").forEach((button) => {
   });
 });
 
+// Function to create animated stars on the page
 function createStars() {
   const starsCount = 50;
   const body = document.body;
@@ -33,6 +35,7 @@ function createStars() {
   }
 }
 
+// Function to update the status message based on the time and day
 function updateStatusMessage(animate = true) {
   const now = new Date();
   const day = now.getDay(); // 0 is Sunday, 6 is Saturday
@@ -56,6 +59,7 @@ function updateStatusMessage(animate = true) {
   }
 }
 
+// Snake game initialization and logic
 const snakeContainer = document.getElementById('snake-game');
 const snakeCanvas = document.getElementById('snake-canvas');
 const snakeCtx = snakeCanvas.getContext('2d');
@@ -63,6 +67,7 @@ const snakeMessage = document.getElementById('snake-message');
 const snakeScore = document.getElementById('snake-score');
 const snakeReset = document.getElementById('snake-reset');
 
+// Variables for snake game state
 let snake = [];
 let food = {};
 let direction = 'right';
@@ -73,6 +78,7 @@ let gridSize = 20;
 let canvasSize = 400;
 let tileCount = canvasSize / gridSize;
 
+// Function to initialize the snake game
 function initSnakeGame() {
   clearInterval(gameInterval);
   
@@ -92,6 +98,7 @@ function initSnakeGame() {
   drawSnakeGame();
 }
 
+// Function to create food for the snake
 function createFood() {
   food = {
     x: Math.floor(Math.random() * tileCount),
@@ -106,6 +113,7 @@ function createFood() {
   }
 }
 
+// Function to draw the snake game on the canvas
 function drawSnakeGame() {
   snakeCtx.fillStyle = '#000';
   snakeCtx.fillRect(0, 0, canvasSize, canvasSize);
@@ -119,6 +127,7 @@ function drawSnakeGame() {
   snakeCtx.fillRect(food.x * gridSize, food.y * gridSize, gridSize - 2, gridSize - 2);
 }
 
+// Function to update the snake's position and check for collisions
 function updateSnake() {
   const head = {x: snake[0].x, y: snake[0].y};
   
@@ -162,11 +171,13 @@ function updateSnake() {
   direction = nextDirection;
 }
 
+// Function to handle game over state
 function gameOver() {
   clearInterval(gameInterval);
   snakeMessage.textContent = `Game Over! Final Score: ${score}. Press Reset to play again.`;
 }
 
+// Function to start the snake game
 function startSnakeGame() {
   initSnakeGame();
   gameInterval = setInterval(() => {
@@ -175,6 +186,7 @@ function startSnakeGame() {
   }, 100);
 }
 
+// Event listener for key presses to control the snake
 function handleSnakeKeyPress(e) {
   if (snakeContainer.style.display !== 'block') return;
   
@@ -201,9 +213,13 @@ function handleSnakeKeyPress(e) {
   }
 }
 
+// Event listener for reset button to restart the snake game
 snakeReset.addEventListener('click', initSnakeGame);
+
+// Event listener for key presses
 document.addEventListener('keydown', handleSnakeKeyPress);
 
+// DOMContentLoaded event to initialize various features
 document.addEventListener("DOMContentLoaded", () => {
   const cursorTrail = document.querySelector(".cursor-trail");
   document.addEventListener("mousemove", (e) => {
@@ -268,7 +284,10 @@ document.addEventListener("DOMContentLoaded", () => {
   animateOnScroll(); 
 });
 
+// Event listener for window load to create stars
 window.addEventListener("load", createStars);
+
+// Event listener for window resize to recreate stars
 window.addEventListener("resize", () => {
   document.querySelectorAll(".star").forEach((star) => star.remove());
   createStars();
