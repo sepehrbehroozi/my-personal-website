@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Metadata and links for icons, stylesheets, and fonts -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sepehr Behroozi – Portfolio</title>
+  <!-- Links to various favicon sizes -->
   <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
@@ -26,21 +28,27 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <!-- Cursor trail effect -->
   <div class="cursor-trail"></div>
   
   <header>
+    <!-- Header section containing profile image and navigation -->
     <div class="header-container">
       <div class="profile-img-container">
+        <!-- Profile image -->
         <img src="personal_photos/profile.jpg" alt="Sepehr Behroozi" class="profile-pic" />
         <div class="profile-overlay">
+          <!-- Overlay text for profile image -->
           <span>Hire Me!</span>
         </div>
       </div>
       <div class="header-content">
+        <!-- Header content with name and typewriter effect -->
         <h1>Sepehr Behroozi Esfahani</h1>
         <p class="typewriter">Computing Science Spec. Graduate @UAlberta | Software Engineer | Web Developer</p>
         <p class="status-message" id="statusMessage"></p>
         <div class="header-nav">
+          <!-- Navigation links -->
           <nav>
             <a href="#about" class="nav-link">About</a>
             <a href="#education" class="nav-link">Education</a>
@@ -57,12 +65,15 @@
   </header>
 
   <section id="about">
+    <!-- About section -->
     <h2>About Me</h2>
     <div class="about-container">
       <div class="about-content">
         <div class="about-highlights">
+          <!-- Highlighted skills and qualities -->
           <div class="about-highlight">
             <div class="highlight-icon">
+              <!-- Icon representing coding skills -->
               <i class="fas fa-code"></i>
             </div>
             <p>Full-stack developer passionate about elegant solutions</p>
@@ -87,10 +98,12 @@
           </div>
         </div>
         <div class="value-proposition">
+          <!-- Value proposition statement -->
           <p>I combine technical expertise with creative problem-solving to build impactful software solutions that drive business success.</p>
         </div>
       </div>
       <div class="about-image">
+        <!-- Profile image with fallback -->
         <div class="image-frame">
           <img src="personal_photos/profile.jpg" alt="Sepehr Behroozi" class="about-img" onerror="this.src='https://via.placeholder.com/350x350?text=Developer+Photo'">
         </div>
@@ -99,18 +112,21 @@
   </section>
 
   <section id="education">
+    <!-- Education section -->
     <h2>Education & Achievements</h2>
     <p><strong>University of Alberta</strong> – BSc, Specialization in Computing Science (Sep 2021 – May 2025)</p>
     <ul>
+      <!-- List of achievements -->
       <li>Alexander Rutherford Scholarship – Sep 2021</li>
       <li>Software Process and Client Management Hackathon Winner – Sep 2024</li>
     </ul>
   </section>
 
   <section id="experience">
+    <!-- Experience section -->
     <h2>Experience</h2>
-
     <div class="project">
+      <!-- Project details -->
       <h3>Software Engineer Intern – NotJustYou</h3>
       <p class="truncatable">
         Developed Medical Wallet and health journaling features for a chronic illness management app called Oxygen. Integrated real-time AI support to simplify complex medical information or inquiries for users. Designed a calming and accessible interface tailored for medical settings to promote ease and mental well-being
@@ -138,20 +154,21 @@
   </section>
 
   <section id="projects">
+    <!-- Projects section -->
     <h2>Projects</h2>
-
     <div class="project">
-        <h3>Relay</h3>
-        <p class="truncatable">
-            Developed a decentralized social networking platform, enabling cross-node communication via a RESTful API.
-            Implemented an inbox-based distribution system for posts, comments, and likes between federated servers.
-            Collaborated with 5 teammates using GitHub in an Agile development process.
-            
-          <br/>
-          <a href="https://github.com/sepehrbehroozi/relay" target="_blank" class="source-link">View Source Code</a>
-        </p>
-        <button class="toggle-btn">Show more</button>
-      </div>
+      <!-- Project details -->
+      <h3>Relay</h3>
+      <p class="truncatable">
+        Developed a decentralized social networking platform, enabling cross-node communication via a RESTful API.
+        Implemented an inbox-based distribution system for posts, comments, and likes between federated servers.
+        Collaborated with 5 teammates using GitHub in an Agile development process.
+        
+        <br/>
+        <a href="https://github.com/sepehrbehroozi/relay" target="_blank" class="source-link">View Source Code</a>
+      </p>
+      <button class="toggle-btn">Show more</button>
+    </div>
 
     <div class="project">
       <h3>ICASSP 2025 SPGC Challenge</h3>
@@ -203,6 +220,7 @@
   </section>
 
   <section id="skills">
+    <!-- Skills section -->
     <h2>Skills</h2>
     
     <div class="skills-category">
@@ -408,46 +426,54 @@
   </section>
   
   <section id="contact">
+    <!-- Contact section -->
     <h2>Contact</h2>
     <div class="contact-grid">
       <div class="contact-card" data-tooltip="Call me!">
+        <!-- Phone contact -->
         <i class="fas fa-phone-alt"></i>
         <p>(780) 203-8889</p>
       </div>
       <div class="contact-card" data-tooltip="Email me!">
+        <!-- Email contact -->
         <i class="fas fa-envelope"></i>
         <p><a href="mailto:sepehrbehroozi@gmail.com">sepehrbehroozi@gmail.com</a></p>
       </div>
       <div class="contact-card" data-tooltip="Connect with me!">
+        <!-- LinkedIn contact -->
         <i class="fab fa-linkedin"></i>
         <p><a href="https://linkedin.com/in/sepehrbehroozi" target="_blank">linkedin.com/in/sepehrbehroozi</a></p>
       </div>
       <div class="contact-card" data-tooltip="Check my code!">
+        <!-- GitHub contact -->
         <i class="fab fa-github"></i>
         <p><a href="https://github.com/sepehrbehroozi" target="_blank">github.com/sepehrbehroozi</a></p>
       </div>
     </div>
     
     <form class="contact-form" action="https://formsubmit.co/sepehrbehroozi@gmail.com" method="POST">
-        <h3>Send me a message</h3>
-        <input type="hidden" name="_subject" value="New message from portfolio">
-        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
-        <input type="hidden" name="_captcha" value="false">
-        <div class="form-group">
-          <input type="text" id="name" name="name" placeholder="Your Name" required>
-        </div>
-        <div class="form-group">
-          <input type="email" id="email" name="email" placeholder="Your Email" required>
-        </div>
-        <div class="form-group">
-          <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+      <!-- Contact form -->
+      <h3>Send me a message</h3>
+      <input type="hidden" name="_subject" value="New message from portfolio">
+      <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+      <input type="hidden" name="_captcha" value="false">
+      <div class="form-group">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
     </form>
   </section>
 
   <footer>
+    <!-- Footer section -->
     <div class="social-links">
+      <!-- Social media links -->
       <a href="https://github.com/sepehrbehroozi" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
       <a href="https://linkedin.com/in/sepehrbehroozi" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
       <a href="mailto:sepehrbehroozi@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
@@ -456,6 +482,7 @@
     <button id="back-to-top" class="back-to-top-btn"><i class="fas fa-arrow-up"></i></button>
   </footer>
 
+  <!-- JavaScript file -->
   <script src="script.js"></script>
 </body>
 </html>
