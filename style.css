@@ -173,16 +173,31 @@ footer {
   max-height: 1000px;
 }
 
-/* Toggle button styling */
 .toggle-btn {
-  background: none;
+  background-color: #835b71;
+  color: white;
+  padding: 10px 18px;
+  font-size: 0.95rem;
   border: none;
-  color: #974579;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 0.9rem;
-  padding: 0;
-  margin-top: 0.4em;
-  text-decoration: underline;
+  margin-top: 12px;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s;
+  box-shadow: 0 3px 6px rgba(99, 102, 241, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toggle-btn:hover {
+  background-color: #4f46e5;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(79, 70, 229, 0.25);
+}
+
+.toggle-btn:active {
+  background-color: #4338ca;
+  transform: scale(0.98);
 }
 
 /* Source link styling */
@@ -313,7 +328,7 @@ html {
   margin-top: 1em;
 }
 
-/* Typewriter effect styling */
+/* Typewriter effect styling for gaming terminal */
 .typewriter {
   display: inline-block;
   overflow: hidden;
@@ -329,6 +344,23 @@ html {
   margin: 0;
 }
 
+/* New Typewriter for index.html */
+.typewriter-long {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid #974579; /* Keep same cursor style */
+  white-space: nowrap;
+  animation: 
+    typing-long 6s steps(70, end) forwards, /* Longer duration & more steps */
+    blink-caret 0.75s step-end infinite; /* Same cursor blink */
+  width: 0;
+  max-width: 100%;
+  font-weight: bold;
+  color: rgb(50, 48, 48);
+  font-size: 1.1em;
+  margin: 0;
+}
+
 @keyframes typing {
   from {
     width: 0;
@@ -336,6 +368,12 @@ html {
   to {
     width: 91%;
   }
+}
+
+/* New keyframes for index.html */
+@keyframes typing-long {
+  from { width: 0; }
+  to { width: 88%; } 
 }
 
 @keyframes blink-caret {
@@ -786,7 +824,7 @@ html {
   color: rgba(255, 255, 255, 0.8);
   margin-top: 0.5em;
   font-size: 0.9em;
-  opacity: 0;
+  opacity: 1;
   transform: scale(0.3);
   animation-fill-mode: forwards;
 }
