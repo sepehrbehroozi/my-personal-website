@@ -44,30 +44,6 @@ function createStars() {
   }
 }
 
-// Function to update the status message based on the time and day
-function updateStatusMessage(animate = true) {
-  const now = new Date();
-  const day = now.getDay(); // 0 is Sunday, 6 is Saturday
-  const hours = now.getHours();
-  const statusElement = document.getElementById("statusMessage");
-
-  if (animate) {
-    statusElement.classList.remove("status-animation");
-    void statusElement.offsetWidth; // Trigger reflow
-    statusElement.classList.add("status-animation");
-  }
-
-  if (day === 6 && hours >= 18) {
-    statusElement.textContent = "🏐 Currently playing volleyball";
-  } else if (hours >= 17) {
-    statusElement.textContent = "💻 Probably coding";
-  } else if (hours >= 24 || hours < 6) {
-    statusElement.textContent = "🛏️ Probably sleeping";
-  } else {
-    statusElement.textContent = "🏢 Probably at work";
-  }
-}
-
 // Snake game initialization and logic
 const snakeContainer = document.getElementById('snake-game');
 const snakeCanvas = document.getElementById('snake-canvas');
@@ -245,10 +221,6 @@ document.addEventListener("DOMContentLoaded", () => {
       cursorTrail.style.transform = "translate(-50%, -50%) scale(1)";
     }, 200);
   });
-
-  updateStatusMessage(true);
-
-  setInterval(() => updateStatusMessage(false), 3600000);
 
   const backToTopBtn = document.getElementById("back-to-top");
   window.addEventListener("scroll", () => {
