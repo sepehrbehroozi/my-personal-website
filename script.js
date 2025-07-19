@@ -3,9 +3,18 @@ document.querySelectorAll(".toggle-btn").forEach((button) => {
   button.addEventListener("click", () => {
     const para = button.previousElementSibling;
     para.classList.toggle("expanded");
-    button.textContent = para.classList.contains("expanded")
-      ? "Show less"
-      : "Show more";
+    
+    const icon = button.querySelector('i');
+    if (icon) {
+      icon.className = para.classList.contains("expanded") 
+        ? 'fas fa-chevron-up' 
+        : 'fas fa-chevron-down';
+    }
+    
+    button.textContent = para.classList.contains("expanded") 
+      ? 'Show less ' 
+      : 'Show more ';
+    if (icon) button.appendChild(icon);
   });
 });
 
