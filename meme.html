@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meme of the Day - Sepehr Behroozi</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="manifest" href="favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .meme-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      padding: 2em;
+      text-align: center;
+    }
+    
+    .meme-title {
+      color: #974579;
+      margin-bottom: 1em;
+    }
+    
+    .meme-image {
+      max-width: 100%;
+      max-height: 70vh;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      border: 5px solid white;
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-top: 2em;
+      color: #974579;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5em 1em;
+      border: 2px solid #974579;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      background-color: #974579;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor-trail"></div>
+  
+  <div class="meme-container">
+    <h1 class="meme-title">Meme of the Day</h1>
+    <img id="memeImage" class="meme-image" alt="Meme of the Day">
+    <a href="index.html" class="back-link">Back to Portfolio</a>
+  </div>
+
+  <script>
+    const memeFiles = [
+      'sunday.webp',
+      'monday.webp',
+      'tuesday.webp',
+      'wednesday.webp',
+      'thursday.webp',
+      'friday.webp',
+      'saturday.webp'
+    ];
+    
+    const dayOfWeek = new Date().getDay();
+    
+    document.getElementById('memeImage').src = `memes/${memeFiles[dayOfWeek]}`;
+  </script>
+  
+  <script src="script.js"></script>
+</body>
+</html>
