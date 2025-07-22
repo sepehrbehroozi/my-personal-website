@@ -790,6 +790,153 @@ html {
   }
 }
 
+/* Responsive styles for smaller screens */
+@media (max-width: 1024px) {
+  .header-container {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  .header-content {
+    text-align: center;
+  }
+
+  nav a {
+    padding: 0.3em 0.7em;
+    font-size: 0.9em;
+  }
+
+  .about-container {
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .about-image {
+    margin-bottom: 1em;
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+
+  .skill-card {
+    padding: 0.8em 0.3em;
+    min-height: 70px;
+  }
+
+  .skill-card i {
+    font-size: 1.5em;
+  }
+
+  .skill-card span {
+    font-size: 0.7em;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .highlight-icon {
+    margin-bottom: 0.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 1em;
+  }
+
+  .about-highlight {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project {
+    padding: 1em;
+  }
+
+  .project h3 {
+    font-size: 1.2em;
+  }
+
+  .project ul {
+    font-size: 0.9em;
+  }
+
+  .contact-form {
+    padding: 1em;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.9em;
+  }
+
+  .submit-btn {
+    font-size: 0.9em;
+    padding: 0.8em 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .typewriter-long {
+    font-size: 1em;
+  }
+
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  }
+
+  .skill-card {
+    padding: 0.5em;
+    min-height: 60px;
+  }
+
+  .skill-card i {
+    font-size: 1.2em;
+  }
+
+  .skill-card span {
+    font-size: 0.6em;
+  }
+
+  .contact-card {
+    padding: 1em;
+  }
+
+  .contact-card i {
+    font-size: 1.2em;
+  }
+
+  .contact-card p {
+    font-size: 0.8em;
+  }
+
+  .submit-btn {
+    font-size: 0.8em;
+    padding: 0.6em 1.2em;
+  }
+}
+
 /* Custom scrollbar styling */
 ::-webkit-scrollbar {
   width: 12px;
