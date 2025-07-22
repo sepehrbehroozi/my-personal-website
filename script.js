@@ -44,165 +44,22 @@ function createStars() {
   }
 }
 
-// Snake game initialization and logic
-const snakeContainer = document.getElementById('snake-game');
-const snakeCanvas = document.getElementById('snake-canvas');
-const snakeCtx = snakeCanvas.getContext('2d');
-const snakeMessage = document.getElementById('snake-message');
-const snakeScore = document.getElementById('snake-score');
-const snakeReset = document.getElementById('snake-reset');
-
-// Variables for snake game state
-let snake = [];
-let food = {};
-let direction = 'right';
-let nextDirection = 'right';
-let gameInterval;
-let score = 0;
-let gridSize = 20;
-let canvasSize = 400;
-let tileCount = canvasSize / gridSize;
-
-// Function to initialize the snake game
-function initSnakeGame() {
-  clearInterval(gameInterval);
-  
-  snake = [
-    {x: 10, y: 10},
-    {x: 9, y: 10},
-    {x: 8, y: 10}
-  ];
-  direction = 'right';
-  nextDirection = 'right';
-  score = 0;
-  snakeScore.textContent = score;
-  snakeMessage.textContent = 'Use arrow keys to move. Press any arrow to start.';
-  
-  createFood();
-  
-  drawSnakeGame();
+// Function to scroll terminal down when new content is added
+function scrollTerminalDown() {
+  const terminalContent = document.getElementById('content');
+  terminalContent.scrollTop = terminalContent.scrollHeight;
 }
 
-// Function to create food for the snake
-function createFood() {
-  food = {
-    x: Math.floor(Math.random() * tileCount),
-    y: Math.floor(Math.random() * tileCount)
-  };
-  
-  for (let i = 0; i < snake.length; i++) {
-    if (food.x === snake[i].x && food.y === snake[i].y) {
-      createFood();
-      return;
-    }
+// Modify addOutput function to include scrolling
+function addOutput(text, className = '') {
+  const div = document.createElement('div');
+  if (className) {
+    div.className = className;
   }
+  div.textContent = text;
+  content.appendChild(div);
+  scrollTerminalDown(); // Scroll down after adding new content
 }
-
-// Function to draw the snake game on the canvas
-function drawSnakeGame() {
-  snakeCtx.fillStyle = '#000';
-  snakeCtx.fillRect(0, 0, canvasSize, canvasSize);
-  
-  for (let i = 0; i < snake.length; i++) {
-    snakeCtx.fillStyle = i === 0 ? '#0f0' : '#0a0';
-    snakeCtx.fillRect(snake[i].x * gridSize, snake[i].y * gridSize, gridSize - 2, gridSize - 2);
-  }
-  
-  snakeCtx.fillStyle = '#f00';
-  snakeCtx.fillRect(food.x * gridSize, food.y * gridSize, gridSize - 2, gridSize - 2);
-}
-
-// Function to update the snake's position and check for collisions
-function updateSnake() {
-  const head = {x: snake[0].x, y: snake[0].y};
-  
-  switch (direction) {
-    case 'up':
-      head.y--;
-      break;
-    case 'down':
-      head.y++;
-      break;
-    case 'left':
-      head.x--;
-      break;
-    case 'right':
-      head.x++;
-      break;
-  }
-  
-  if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount) {
-    gameOver();
-    return;
-  }
-  
-  for (let i = 0; i < snake.length; i++) {
-    if (head.x === snake[i].x && head.y === snake[i].y) {
-      gameOver();
-      return;
-    }
-  }
-  
-  snake.unshift(head);
-  
-  if (head.x === food.x && head.y === food.y) {
-    score++;
-    snakeScore.textContent = score;
-    createFood();
-  } else {
-    snake.pop();
-  }
-  
-  direction = nextDirection;
-}
-
-// Function to handle game over state
-function gameOver() {
-  clearInterval(gameInterval);
-  snakeMessage.textContent = `Game Over! Final Score: ${score}. Press Reset to play again.`;
-}
-
-// Function to start the snake game
-function startSnakeGame() {
-  initSnakeGame();
-  gameInterval = setInterval(() => {
-    updateSnake();
-    drawSnakeGame();
-  }, 100);
-}
-
-// Event listener for key presses to control the snake
-function handleSnakeKeyPress(e) {
-  if (snakeContainer.style.display !== 'block') return;
-  
-  if ([37, 38, 39, 40].includes(e.keyCode)) {
-    e.preventDefault();
-  }
-  
-  switch (e.keyCode) {
-    case 37: 
-      if (direction !== 'right') nextDirection = 'left';
-      break;
-    case 38: 
-      if (direction !== 'down') nextDirection = 'up';
-      break;
-    case 39: 
-      if (direction !== 'left') nextDirection = 'right';
-      break;
-    case 40: 
-      if (direction !== 'up') nextDirection = 'down';
-      break;
-    case 32: 
-      if (!gameInterval) startSnakeGame();
-      break;
-  }
-}
-
-// Event listener for reset button to restart the snake game
-snakeReset.addEventListener('click', initSnakeGame);
-
-// Event listener for key presses
-document.addEventListener('keydown', handleSnakeKeyPress);
 
 // DOMContentLoaded event to initialize various features
 document.addEventListener("DOMContentLoaded", () => {
