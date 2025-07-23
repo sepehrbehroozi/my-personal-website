@@ -375,7 +375,7 @@ html {
 /* New keyframes for index.html */
 @keyframes typing-long {
   from { width: 0; }
-  to { width: 88%; } 
+  to { width: 85%; } 
 }
 
 @keyframes blink-caret {
