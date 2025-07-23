@@ -34,8 +34,9 @@
   
   <header>
     <!-- Header section containing profile image and navigation -->
-    <div class="header-container">
-      <div class="profile-img-container">
+    <div class="header-container" style="display: flex; align-items: center;">
+      <!-- Profile image container moved to the very left -->
+      <div class="profile-img-container" style="margin-right: 20px;">
         <!-- Profile image -->
         <img src="personal_photos/profile.jpg" alt="Sepehr Behroozi" class="profile-pic" />
         <div class="profile-overlay">
@@ -43,7 +44,7 @@
           <span>Hire Me!</span>
         </div>
       </div>
-      <div class="header-content">
+      <div class="header-content" style="flex-grow: 1;">
         <!-- Header content with name and typewriter effect -->
         <h1 class="text-outline">Sepehr Behroozi Esfahani</h1>
         <p class="typewriter-long text-outline">Computing Science Spec. Graduate @UAlberta | Software Engineer | Web Developer | AI Researcher</p>
@@ -244,7 +245,7 @@
       <button class="toggle-btn">
         Show more <i class="fas fa-chevron-down"></i>
       </button>
-      <a href="https://github.com/sepehrbehroozi/relay" target="_blank" class="source-link">View Source Code</a>
+      <a href="https://github.com/AhmadOlagunju/relay-federated-social-app" target="_blank" class="source-link">View Source Code</a>
     </div>
   
     <div class="project">
@@ -407,7 +408,6 @@
           <span>Firebase</span>
         </div>
         <div class="skill-card">
-          <i class="fab fa-github"></i>
           <span>GitHub</span>
         </div>
         <div class="skill-card">
