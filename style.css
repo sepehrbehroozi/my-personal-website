@@ -141,6 +141,8 @@ h2 {
   border-radius: 8px;
   color: rgb(175, 125, 156);
   background-color: rgb(50, 48, 48);
+  position: relative; /* Ensure the logo is positioned relative to the card */
+  size: 1.1em;
 }
 
 .project:hover {
@@ -972,4 +974,16 @@ html {
     0 0 5px rgba(9, 0, 10, 0.8);
   color: rgb(255, 255, 255);
   font-weight: bold;
+}
+
+/* Experience logo positioning */
+.experience-logo {
+  width: 50px;
+  height: auto;
+  position: absolute;
+}
+
+.top-right {
+  top: 10px;
+  right: 10px;
 }
