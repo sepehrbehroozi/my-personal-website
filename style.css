@@ -981,9 +981,17 @@ html {
   width: 50px;
   height: auto;
   position: absolute;
+  border-radius: 5px; /* Optional: Add rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
 }
 
 .top-right {
   top: 10px;
   right: 10px;
+}
+
+.education-logo {
+  width: 50%; /* Relative to the container */
+  max-width: 500px; /* Limit maximum size */
+  height: auto;
 }
