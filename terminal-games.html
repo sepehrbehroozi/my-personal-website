@@ -27,7 +27,7 @@
     /* Terminal specific styles */
     .terminal-container {
       background-color: #000;
-      color: #0f0;
+      color: rgb(255, 54, 195);
       font-family: 'Courier New', monospace;
       padding: 20px;
       border-radius: 5px;
@@ -151,6 +151,14 @@
       background-color: #0f0;
       color: #000;
     }
+
+    .minesweeper-cell {
+      transition: all 0.3s ease;
+    }
+
+    .minesweeper-cell:hover {
+      background-color: #444 !important;
+    }
   </style>
 </head>
 <body>
@@ -209,6 +217,15 @@
         <div id="memory-board" style="display: grid; grid-template-columns: repeat(4, 100px); gap: 10px; margin: 20px auto;"></div>
         <div class="game-message" id="memory-message">Find all matching pairs!</div>
         <button id="memory-reset" style="background: black; color: #0f0; border: 1px solid #0f0; padding: 5px 10px; cursor: pointer;">Reset Game</button>
+      </div>
+
+      <!-- Minesweeper Game -->
+      <div id="minesweeper" class="game-container">
+        <h2 class="game-title">Minesweeper</h2>
+        <div class="game-message" id="minesweeper-message">Click to reveal cells. Right-click to flag.</div>
+        <div class="minesweeper-board" id="minesweeper-board" style="display: grid; gap: 2px; margin: 20px auto;"></div>
+        <button id="minesweeper-reset" style="background: black; color: #0f0; border: 1px solid #0f0; padding: 5px 10px; cursor: pointer;">Reset Game</button>
+        <div id="explosion" style="position: absolute; width: 100px; height: 100px; background: radial-gradient(circle, red, yellow); border-radius: 50%; pointer-events: none; display: none; z-index: 100;"></div>
       </div>
     </div>
   </div>
@@ -271,12 +288,14 @@
       commandInput.addEventListener('keydown', handleCommandInput);
       ticTacToeReset.addEventListener('click', resetTicTacToe);
       memoryReset.addEventListener('click', initMemoryGame);
+      minesweeperReset.addEventListener('click', initMinesweeper);
       
       ticTacToeCells.forEach(cell => {
         cell.addEventListener('click', handleTicTacToeCellClick);
       });
       
       initMemoryGame();
+      initMinesweeper();
       
       addOutput('Welcome to Retro Terminal Games!');
       addOutput('Type "help" to see available commands.');
@@ -330,6 +349,9 @@
         case 'memory':
           showGame('memory-game');
           break;
+        case 'minesweeper':
+          showGame('minesweeper');
+          break;
         case 'exit':
           hideAllGames();
           addOutput('Closed current game.', 'success');
@@ -350,6 +372,7 @@
       addHelpItem('clear', 'Clear the terminal');
       addHelpItem('tictactoe', 'Start Tic Tac Toe game');
       addHelpItem('memory', 'Start Memory game');
+      addHelpItem('minesweeper', 'Start Minesweeper game');
       addHelpItem('exit', 'Exit current game');
       addHelpItem('list/ls', 'List available games');
     }
@@ -388,6 +411,7 @@
       addOutput('Available games:');
       addOutput('- tictactoe: Classic Tic Tac Toe game');
       addOutput('- memory: Card matching memory game');
+      addOutput('- minesweeper: Classic Minesweeper game');
     }
     
     function handleTicTacToeCellClick(e) {
@@ -580,5 +604,7 @@
     window.onload = init;
   </script>
   <script src="script.js"></script>
+  <div id="explosion-overlay"></div>
+  <div id="game-over-message">YOU LOSE!</div>
 </body>
 </html>
