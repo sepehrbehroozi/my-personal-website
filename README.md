@@ -10,6 +10,8 @@ This is the website for my personal portfolio!
 6. Contact
 
 # TODO
-1. Memes
-2. Games
+1. Memes-DONE
+2. Games-DONE
 3. Blog
+4. Add images for the projects
+5. Add socials at the top right of the page
