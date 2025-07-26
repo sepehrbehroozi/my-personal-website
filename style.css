@@ -176,7 +176,6 @@ footer {
 }
 
 .toggle-btn {
-  background-color: #835b71;
   color: white;
   padding: 10px 18px;
   font-size: 0.95rem;
@@ -991,11 +990,11 @@ html {
 }
 
 .education-logo {
-  width: 100%; /* Take full width of container */
-  max-width: 400px; /* More reasonable maximum size */
+  width: min(50vw, 300px);  max-width: 400px; /* More reasonable maximum size */
   height: auto;
   display: block;
   margin: 1 auto;
+  object-fit: contain; /* Maintain aspect ratio */
 }
 
 /* Responsive adjustments */
@@ -1105,3 +1104,95 @@ html {
   }
 }
 
+/* Add this to your style.css file */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  align-items: center; /* Changed from stretch to center */
+}
+
+.toggle-btn, .source-btn, .demo-btn {
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease, transform 0.1s ease, box-shadow 0.2s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  gap: 6px;
+  text-decoration: none;
+  height: 40px; /* Fixed height */
+  box-sizing: border-box;
+  line-height: 1;
+  vertical-align: middle; /* Ensure vertical alignment */
+}
+
+/* Specific button styles */
+.toggle-btn {
+  background-color: #974579;
+  color: white;
+}
+
+.source-btn {
+  background-color: #974579;
+  color: white;
+}
+
+.demo-btn {
+  background-color: #974579;
+  color: white;
+}
+
+/* Hover states */
+.toggle-btn:hover {
+  background-color: #4f46e5;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(79, 70, 229, 0.25);
+}
+
+.source-btn:hover {
+  background-color: #444;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.demo-btn:hover {
+  background-color: #722750;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(151, 69, 118, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .button-group {
+    gap: 8px;
+  }
+  
+  .toggle-btn, .source-btn, .demo-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    height: 36px; /* Slightly smaller on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .button-group {
+    gap: 6px;
+  }
+  
+  .toggle-btn, .source-btn, .demo-btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    height: 34px; /* Even smaller on very small screens */
+  }
+}
+
+.button-group > * {
+  vertical-align: middle;
+  margin: 0;
+}

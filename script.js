@@ -1,7 +1,7 @@
 // Toggle button functionality to expand/collapse content
 document.querySelectorAll(".toggle-btn").forEach((button) => {
   button.addEventListener("click", () => {
-    const para = button.previousElementSibling;
+    const para = button.closest('.project').querySelector('.bullet-container');
     para.classList.toggle("expanded");
     
     const icon = button.querySelector('i');
