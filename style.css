@@ -494,7 +494,7 @@ html {
 
 .form-group input,
 .form-group textarea {
-  width: 100%;
+  width: 90%;
   padding: 0.8em;
   border: 1px solid #ddd;
   margin-top: 0.4em;
@@ -991,9 +991,24 @@ html {
 }
 
 .education-logo {
-  width: 50%; /* Relative to the container */
-  max-width: 500px; /* Limit maximum size */
+  width: 100%; /* Take full width of container */
+  max-width: 400px; /* More reasonable maximum size */
   height: auto;
+  display: block;
+  margin: 1 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .education-logo {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-logo {
+    max-width: 150px;
+  }
 }
 
 /* Explosion effect styles */
@@ -1036,3 +1051,57 @@ html {
   50% { transform: translate(-50%, -50%) rotate(-3deg); }
   75% { transform: translate(-50%, -50%) rotate(3deg); }
 }
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1em;
+  }
+  
+  .profile-img-container {
+    margin-right: 0;
+    margin-bottom: 1em;
+  }
+  
+  .header-nav {
+    margin-top: 1em;
+  }
+  
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+  }
+  
+  nav a {
+    margin: 0.2em;
+    font-size: 0.9em;
+    padding: 0.3em 0.7em;
+  }
+  
+  .typewriter-long {
+    font-size: 1em;
+    white-space: normal;
+    border-right: none;
+    animation: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+  }
+  
+  .typewriter-long {
+    font-size: 0.9em;
+  }
+  
+  nav a {
+    font-size: 0.8em;
+    padding: 0.2em 0.5em;
+  }
+}
+
