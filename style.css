@@ -991,9 +991,24 @@ html {
 }
 
 .education-logo {
-  width: 50%; /* Relative to the container */
-  max-width: 500px; /* Limit maximum size */
+  width: 100%; /* Take full width of container */
+  max-width: 400px; /* More reasonable maximum size */
   height: auto;
+  display: block;
+  margin: 1 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .education-logo {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-logo {
+    max-width: 150px;
+  }
 }
 
 /* Explosion effect styles */
