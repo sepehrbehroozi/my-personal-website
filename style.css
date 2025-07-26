@@ -991,11 +991,11 @@ html {
 }
 
 .education-logo {
-  width: 100%; /* Take full width of container */
-  max-width: 400px; /* More reasonable maximum size */
+  width: min(50vw, 300px);  max-width: 400px; /* More reasonable maximum size */
   height: auto;
   display: block;
   margin: 1 auto;
+  object-fit: contain; /* Maintain aspect ratio */
 }
 
 /* Responsive adjustments */
