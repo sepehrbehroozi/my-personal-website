@@ -120,6 +120,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", animateOnScroll);
   animateOnScroll(); 
+
+  const resumeButton = document.getElementById('resume-button');
+  const resumeDropdown = document.querySelector('.resume-dropdown');
+  
+  // Toggle dropdown on click
+  resumeButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isVisible = resumeDropdown.style.display === 'block';
+    resumeDropdown.style.display = isVisible ? 'none' : 'block';
+  });
+  
+  // Close dropdown when clicking elsewhere
+  document.addEventListener('click', () => {
+    resumeDropdown.style.display = 'none';
+  });
 });
 
 // Event listener for window load to create stars
