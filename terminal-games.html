@@ -24,6 +24,19 @@
   <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
   <style>
+    .text-outline {
+      text-shadow: 
+        0 0 5px rgba(9, 0, 10, 0.8);
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+    }
+
+    .terminal-text-outline {
+      text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.8);
+      color: rgb(233, 66, 183);
+    }
+
     /* Terminal specific styles */
     .terminal-container {
       background-color: #000;
@@ -173,8 +186,8 @@
         </div>
       </div>
       <div class="header-content">
-        <h1>Terminal Games</h1>
-        <p class="typewriter">Retro-style terminal games collection</p>
+        <h1 class="text-outline">Terminal Games</h1>
+        <p class="typewriter text-outline">Retro-style terminal games collection</p>
       </div>
     </div>
   </header>
@@ -182,7 +195,7 @@
   <div class="terminal-container">
     <div id="terminal">
       <div id="header">
-        <h2>Retro Terminal Games</h2>
+        <h2 class="terminal-text-outline">Terminal</h2>
         <p>Type 'help' for available commands</p>
       </div>
       
