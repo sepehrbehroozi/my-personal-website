@@ -657,22 +657,19 @@
       </div>
     </div>
     
-    <form class="contact-form" action="https://formsubmit.co/sepehrbehroozi@gmail.com" method="POST">
-      <!-- Contact form -->
-      <h3>Send me a message</h3>
-      <input type="hidden" name="_subject" value="New message from portfolio">
-      <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
-      <input type="hidden" name="_captcha" value="false">
-      <div class="form-group">
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-      </div>
-      <div class="form-group">
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-      </div>
-      <div class="form-group">
-        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-      </div>
-      <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+    <form class="contact-form" action="form-handler.php" method="POST">
+        <!-- Contact form -->
+        <h3>Send me a message</h3>
+        <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
     </form>
   </section>
 
