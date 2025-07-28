@@ -351,9 +351,8 @@ html {
   overflow: hidden;
   border-right: 2px solid #974579; /* Keep same cursor style */
   white-space: nowrap;
-  animation: 
-    typing-long 6s steps(70, end) forwards, /* Longer duration & more steps */
-    blink-caret 0.75s step-end infinite; /* Same cursor blink */
+  animation: typing-long 6s steps(70, end) forwards,
+    /* Longer duration & more steps */ blink-caret 0.75s step-end infinite; /* Same cursor blink */
   width: 0;
   max-width: 100%;
   font-weight: bold;
@@ -373,8 +372,12 @@ html {
 
 /* New keyframes for index.html */
 @keyframes typing-long {
-  from { width: 0; }
-  to { width: 88%; } 
+  from {
+    width: 0;
+  }
+  to {
+    width: 88%;
+  }
 }
 
 @keyframes blink-caret {
@@ -950,10 +953,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    #974579,
-    #722750
-  );
+  background: linear-gradient(#974579, #722750);
   border-radius: 10px;
   border: 2px solid rgb(50, 48, 48);
 }
@@ -969,8 +969,7 @@ html {
 
 /* Glowing text outline effect */
 .text-outline {
-  text-shadow: 
-    0 0 5px rgba(9, 0, 10, 0.8);
+  text-shadow: 0 0 5px rgba(9, 0, 10, 0.8);
   color: rgb(255, 255, 255);
   font-weight: bold;
 }
@@ -990,7 +989,8 @@ html {
 }
 
 .education-logo {
-  width: min(50vw, 300px);  max-width: 400px; /* More reasonable maximum size */
+  width: min(50vw, 300px);
+  max-width: 400px; /* More reasonable maximum size */
   height: auto;
   display: block;
   margin: 1 auto;
@@ -1017,7 +1017,11 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,69,0,0.9) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 0, 0, 0.8) 0%,
+    rgba(255, 69, 0, 0.9) 100%
+  );
   z-index: 999;
   display: none;
   pointer-events: none;
@@ -1039,16 +1043,33 @@ html {
 }
 
 @keyframes explosionPulse {
-  0% { opacity: 0; transform: scale(0.1); }
-  50% { opacity: 1; }
-  100% { opacity: 0.8; transform: scale(1); }
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
 }
 
 @keyframes textShake {
-  0%, 100% { transform: translate(-50%, -50%) rotate(-2deg); }
-  25% { transform: translate(-50%, -50%) rotate(2deg); }
-  50% { transform: translate(-50%, -50%) rotate(-3deg); }
-  75% { transform: translate(-50%, -50%) rotate(3deg); }
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(-2deg);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(2deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(-3deg);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(3deg);
+  }
 }
 
 @media (max-width: 768px) {
@@ -1057,29 +1078,29 @@ html {
     text-align: center;
     padding: 1em;
   }
-  
+
   .profile-img-container {
     margin-right: 0;
     margin-bottom: 1em;
   }
-  
+
   .header-nav {
     margin-top: 1em;
   }
-  
+
   nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5em;
   }
-  
+
   nav a {
     margin: 0.2em;
     font-size: 0.9em;
     padding: 0.3em 0.7em;
   }
-  
+
   .typewriter-long {
     font-size: 1em;
     white-space: normal;
@@ -1093,11 +1114,11 @@ html {
   h1 {
     font-size: 1.8em;
   }
-  
+
   .typewriter-long {
     font-size: 0.9em;
   }
-  
+
   nav a {
     font-size: 0.8em;
     padding: 0.2em 0.5em;
@@ -1113,7 +1134,9 @@ html {
   align-items: center; /* Changed from stretch to center */
 }
 
-.toggle-btn, .source-btn, .demo-btn {
+.toggle-btn,
+.source-btn,
+.demo-btn {
   padding: 10px 18px;
   font-size: 0.95rem;
   border: none;
@@ -1172,8 +1195,10 @@ html {
   .button-group {
     gap: 8px;
   }
-  
-  .toggle-btn, .source-btn, .demo-btn {
+
+  .toggle-btn,
+  .source-btn,
+  .demo-btn {
     padding: 8px 12px;
     font-size: 0.85rem;
     height: 36px; /* Slightly smaller on mobile */
@@ -1184,8 +1209,10 @@ html {
   .button-group {
     gap: 6px;
   }
-  
-  .toggle-btn, .source-btn, .demo-btn {
+
+  .toggle-btn,
+  .source-btn,
+  .demo-btn {
     padding: 6px 10px;
     font-size: 0.8rem;
     height: 34px; /* Even smaller on very small screens */
@@ -1239,7 +1266,7 @@ html {
     order: 3;
     width: 100%;
   }
-  
+
   .header-container {
     position: relative;
   }
@@ -1333,12 +1360,12 @@ html {
     margin-right: 0;
     margin-bottom: 15px;
   }
-  
+
   .resume-btn {
     width: auto;
     padding: 8px 20px;
   }
-  
+
   .resume-dropdown {
     left: 50%;
     transform: translateX(-50%);

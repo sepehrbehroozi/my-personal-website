@@ -1,19 +1,19 @@
 // Toggle button functionality to expand/collapse content
 document.querySelectorAll(".toggle-btn").forEach((button) => {
   button.addEventListener("click", () => {
-    const para = button.closest('.project').querySelector('.bullet-container');
+    const para = button.closest(".project").querySelector(".bullet-container");
     para.classList.toggle("expanded");
-    
-    const icon = button.querySelector('i');
+
+    const icon = button.querySelector("i");
     if (icon) {
-      icon.className = para.classList.contains("expanded") 
-        ? 'fas fa-chevron-up' 
-        : 'fas fa-chevron-down';
+      icon.className = para.classList.contains("expanded")
+        ? "fas fa-chevron-up"
+        : "fas fa-chevron-down";
     }
-    
-    button.textContent = para.classList.contains("expanded") 
-      ? 'Show less ' 
-      : 'Show more ';
+
+    button.textContent = para.classList.contains("expanded")
+      ? "Show less "
+      : "Show more ";
     if (icon) button.appendChild(icon);
   });
 });
@@ -46,13 +46,13 @@ function createStars() {
 
 // Function to scroll terminal down when new content is added
 function scrollTerminalDown() {
-  const terminalContent = document.getElementById('content');
+  const terminalContent = document.getElementById("content");
   terminalContent.scrollTop = terminalContent.scrollHeight;
 }
 
 // Modify addOutput function to include scrolling
-function addOutput(text, className = '') {
-  const div = document.createElement('div');
+function addOutput(text, className = "") {
+  const div = document.createElement("div");
   if (className) {
     div.className = className;
   }
@@ -119,21 +119,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   window.addEventListener("scroll", animateOnScroll);
-  animateOnScroll(); 
+  animateOnScroll();
 
-  const resumeButton = document.getElementById('resume-button');
-  const resumeDropdown = document.querySelector('.resume-dropdown');
-  
+  const resumeButton = document.getElementById("resume-button");
+  const resumeDropdown = document.querySelector(".resume-dropdown");
+
   // Toggle dropdown on click
-  resumeButton.addEventListener('click', (e) => {
+  resumeButton.addEventListener("click", (e) => {
     e.stopPropagation();
-    const isVisible = resumeDropdown.style.display === 'block';
-    resumeDropdown.style.display = isVisible ? 'none' : 'block';
+    const isVisible = resumeDropdown.style.display === "block";
+    resumeDropdown.style.display = isVisible ? "none" : "block";
   });
-  
+
   // Close dropdown when clicking elsewhere
-  document.addEventListener('click', () => {
-    resumeDropdown.style.display = 'none';
+  document.addEventListener("click", () => {
+    resumeDropdown.style.display = "none";
   });
 });
 
@@ -147,11 +147,11 @@ window.addEventListener("resize", () => {
 });
 
 // Minesweeper game variables
-const minesweeperContainer = document.getElementById('minesweeper');
-const minesweeperBoard = document.getElementById('minesweeper-board');
-const minesweeperMessage = document.getElementById('minesweeper-message');
-const minesweeperReset = document.getElementById('minesweeper-reset');
-const explosion = document.getElementById('explosion');
+const minesweeperContainer = document.getElementById("minesweeper");
+const minesweeperBoard = document.getElementById("minesweeper-board");
+const minesweeperMessage = document.getElementById("minesweeper-message");
+const minesweeperReset = document.getElementById("minesweeper-reset");
+const explosion = document.getElementById("explosion");
 
 let boardSize = 10;
 let mineCount = 15;
@@ -166,13 +166,14 @@ function initMinesweeper() {
   revealed = [];
   flagged = [];
   gameOver = false;
-  minesweeperBoard.innerHTML = '';
-  minesweeperMessage.textContent = 'Click to reveal cells. Right-click to flag.';
+  minesweeperBoard.innerHTML = "";
+  minesweeperMessage.textContent =
+    "Click to reveal cells. Right-click to flag.";
 
   // Reset explosion effects
-  document.getElementById('explosion-overlay').style.display = 'none';
-  document.getElementById('game-over-message').style.display = 'none';
-  document.querySelector('.terminal-container').style.animation = '';
+  document.getElementById("explosion-overlay").style.display = "none";
+  document.getElementById("game-over-message").style.display = "none";
+  document.querySelector(".terminal-container").style.animation = "";
 
   // Create empty board
   for (let i = 0; i < boardSize; i++) {
@@ -191,17 +192,23 @@ function initMinesweeper() {
   while (minesPlaced < mineCount) {
     const x = Math.floor(Math.random() * boardSize);
     const y = Math.floor(Math.random() * boardSize);
-    
+
     if (board[x][y] !== -1) {
       board[x][y] = -1;
       minesPlaced++;
-      
+
       // Increment counts around the mine
       for (let dx = -1; dx <= 1; dx++) {
         for (let dy = -1; dy <= 1; dy++) {
           const nx = x + dx;
           const ny = y + dy;
-          if (nx >= 0 && nx < boardSize && ny >= 0 && ny < boardSize && board[nx][ny] !== -1) {
+          if (
+            nx >= 0 &&
+            nx < boardSize &&
+            ny >= 0 &&
+            ny < boardSize &&
+            board[nx][ny] !== -1
+          ) {
             board[nx][ny]++;
           }
         }
@@ -211,29 +218,29 @@ function initMinesweeper() {
 
   // Create board UI
   minesweeperBoard.style.gridTemplateColumns = `repeat(${boardSize}, 30px)`;
-  
+
   for (let i = 0; i < boardSize; i++) {
     for (let j = 0; j < boardSize; j++) {
-      const cell = document.createElement('div');
-      cell.className = 'minesweeper-cell';
+      const cell = document.createElement("div");
+      cell.className = "minesweeper-cell";
       cell.dataset.x = i;
       cell.dataset.y = j;
-      cell.style.width = '30px';
-      cell.style.height = '30px';
-      cell.style.backgroundColor = '#333';
-      cell.style.border = '1px solid #0f0';
-      cell.style.display = 'flex';
-      cell.style.justifyContent = 'center';
-      cell.style.alignItems = 'center';
-      cell.style.cursor = 'pointer';
-      cell.style.fontSize = '12px';
-      
-      cell.addEventListener('click', () => handleCellClick(i, j));
-      cell.addEventListener('contextmenu', (e) => {
+      cell.style.width = "30px";
+      cell.style.height = "30px";
+      cell.style.backgroundColor = "#333";
+      cell.style.border = "1px solid #0f0";
+      cell.style.display = "flex";
+      cell.style.justifyContent = "center";
+      cell.style.alignItems = "center";
+      cell.style.cursor = "pointer";
+      cell.style.fontSize = "12px";
+
+      cell.addEventListener("click", () => handleCellClick(i, j));
+      cell.addEventListener("contextmenu", (e) => {
         e.preventDefault();
         handleRightClick(i, j);
       });
-      
+
       minesweeperBoard.appendChild(cell);
     }
   }
@@ -241,50 +248,60 @@ function initMinesweeper() {
 
 function handleCellClick(x, y) {
   if (gameOver || revealed[x][y] || flagged[x][y]) return;
-  
+
   if (board[x][y] === -1) {
     // Mine clicked - game over
     revealAllMines();
     showExplosion(x, y);
-    minesweeperMessage.textContent = 'BOOM! Game Over!';
+    minesweeperMessage.textContent = "BOOM! Game Over!";
     gameOver = true;
     return;
   }
-  
+
   revealCell(x, y);
-  
+
   if (checkWin()) {
-    minesweeperMessage.textContent = 'Congratulations! You won!';
+    minesweeperMessage.textContent = "Congratulations! You won!";
     gameOver = true;
   }
 }
 
 function handleRightClick(x, y) {
   if (gameOver || revealed[x][y]) return;
-  
+
   flagged[x][y] = !flagged[x][y];
   const cell = getCellElement(x, y);
-  
+
   if (flagged[x][y]) {
-    cell.textContent = '🚩';
-    cell.style.color = '#f00';
+    cell.textContent = "🚩";
+    cell.style.color = "#f00";
   } else {
-    cell.textContent = '';
+    cell.textContent = "";
   }
 }
 
 function revealCell(x, y) {
   if (revealed[x][y] || flagged[x][y]) return;
-  
+
   revealed[x][y] = true;
   const cell = getCellElement(x, y);
-  cell.style.backgroundColor = '#111';
-  
+  cell.style.backgroundColor = "#111";
+
   if (board[x][y] > 0) {
     cell.textContent = board[x][y];
     // Different colors for different numbers
-    const colors = ['', '#00f', '#0a0', '#f00', '#00a', '#a00', '#0aa', '#000', '#888'];
-    cell.style.color = colors[board[x][y]] || '#fff';
+    const colors = [
+      "",
+      "#00f",
+      "#0a0",
+      "#f00",
+      "#00a",
+      "#a00",
+      "#0aa",
+      "#000",
+      "#888",
+    ];
+    cell.style.color = colors[board[x][y]] || "#fff";
   } else {
     // Reveal adjacent cells if this is an empty cell
     for (let dx = -1; dx <= 1; dx++) {
@@ -304,8 +321,8 @@ function revealAllMines() {
     for (let j = 0; j < boardSize; j++) {
       if (board[i][j] === -1) {
         const cell = getCellElement(i, j);
-        cell.textContent = '💣';
-        cell.style.backgroundColor = '#f00';
+        cell.textContent = "💣";
+        cell.style.backgroundColor = "#f00";
       }
     }
   }
@@ -323,35 +340,37 @@ function checkWin() {
 }
 
 function getCellElement(x, y) {
-  return document.querySelector(`.minesweeper-cell[data-x="${x}"][data-y="${y}"]`);
+  return document.querySelector(
+    `.minesweeper-cell[data-x="${x}"][data-y="${y}"]`
+  );
 }
 
 function showExplosion(x, y) {
   // Show the cell explosion
   const cell = getCellElement(x, y);
-  cell.textContent = '💣';
-  cell.style.backgroundColor = '#f00';
-  cell.style.color = '#000';
-  cell.style.fontSize = '20px';
-  
+  cell.textContent = "💣";
+  cell.style.backgroundColor = "#f00";
+  cell.style.color = "#000";
+  cell.style.fontSize = "20px";
+
   // Show the full-screen explosion
-  const explosionOverlay = document.getElementById('explosion-overlay');
-  const gameOverMessage = document.getElementById('game-over-message');
-  
-  explosionOverlay.style.display = 'block';
-  gameOverMessage.style.display = 'block';
-  
+  const explosionOverlay = document.getElementById("explosion-overlay");
+  const gameOverMessage = document.getElementById("game-over-message");
+
+  explosionOverlay.style.display = "block";
+  gameOverMessage.style.display = "block";
+
   // Shake the terminal container
-  const terminalContainer = document.querySelector('.terminal-container');
-  terminalContainer.style.animation = 'textShake 0.2s linear infinite';
-  
+  const terminalContainer = document.querySelector(".terminal-container");
+  terminalContainer.style.animation = "textShake 0.2s linear infinite";
+
   // Hide after animation
   setTimeout(() => {
-    explosionOverlay.style.display = 'none';
-    gameOverMessage.style.display = 'none';
-    terminalContainer.style.animation = '';
+    explosionOverlay.style.display = "none";
+    gameOverMessage.style.display = "none";
+    terminalContainer.style.animation = "";
   }, 2000);
-  
+
   // Reveal all mines
   revealAllMines();
 }

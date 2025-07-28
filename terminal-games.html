@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -25,14 +26,14 @@
   <link rel="stylesheet" href="style.css">
   <style>
     .text-outline {
-      text-shadow: 
+      text-shadow:
         0 0 5px rgba(9, 0, 10, 0.8);
       color: rgb(255, 255, 255);
       font-weight: bold;
     }
 
     .terminal-text-outline {
-      text-shadow: 
+      text-shadow:
         0 0 5px rgba(255, 255, 255, 0.8);
       color: rgb(233, 66, 183);
     }
@@ -49,33 +50,33 @@
       border: 2px solid #0f0;
       box-shadow: 0 0 15px #0f0;
     }
-    
+
     #terminal {
       height: 70vh;
       overflow-y: auto;
       padding: 15px;
     }
-    
+
     #header {
       text-align: center;
       margin-bottom: 20px;
       border-bottom: 1px solid #0f0;
       padding-bottom: 10px;
     }
-    
+
     #content {
       margin-bottom: 20px;
     }
-    
+
     #input-line {
       display: flex;
       align-items: center;
     }
-    
+
     #prompt {
       margin-right: 10px;
     }
-    
+
     #command-input {
       background-color: transparent;
       border: none;
@@ -85,17 +86,17 @@
       width: 80%;
       outline: none;
     }
-    
+
     .game-container {
       display: none;
       margin-top: 20px;
     }
-    
+
     .game-title {
       color: #0ff;
       margin-bottom: 10px;
     }
-    
+
     .tic-tac-toe-board {
       display: grid;
       grid-template-columns: repeat(3, 100px);
@@ -103,7 +104,7 @@
       gap: 5px;
       margin: 20px auto;
     }
-    
+
     .tic-tac-toe-cell {
       width: 100px;
       height: 100px;
@@ -114,38 +115,38 @@
       font-size: 40px;
       cursor: pointer;
     }
-    
+
     .tic-tac-toe-cell:hover {
       background-color: #111;
     }
-    
+
     .game-message {
       margin: 10px 0;
       color: #ff0;
     }
-    
+
     .command {
       color: #0ff;
     }
-    
+
     .error {
       color: #f00;
     }
-    
+
     .success {
       color: #0f0;
     }
-    
+
     .help-item {
       margin-bottom: 5px;
     }
-    
+
     .help-command {
       color: #0ff;
       display: inline-block;
       width: 150px;
     }
-    
+
     .back-button {
       display: block;
       margin: 20px auto;
@@ -159,7 +160,7 @@
       text-align: center;
       width: 200px;
     }
-    
+
     .back-button:hover {
       background-color: #0f0;
       color: #000;
@@ -174,9 +175,10 @@
     }
   </style>
 </head>
+
 <body>
   <div class="cursor-trail"></div>
-  
+
   <header>
     <div class="header-container">
       <div class="profile-img-container">
@@ -198,14 +200,14 @@
         <h2 class="terminal-text-outline">Terminal</h2>
         <p>Type 'help' for available commands</p>
       </div>
-      
+
       <div id="content"></div>
-      
+
       <div id="input-line">
         <span id="prompt">$</span>
         <input type="text" id="command-input" autofocus>
       </div>
-      
+
       <!-- Tic Tac Toe Game -->
       <div id="tic-tac-toe" class="game-container">
         <h2 class="game-title">Tic Tac Toe</h2>
@@ -221,15 +223,20 @@
           <div class="tic-tac-toe-cell" data-index="7"></div>
           <div class="tic-tac-toe-cell" data-index="8"></div>
         </div>
-        <button id="tic-tac-toe-reset" style="background: black; color: #0f0; border: 1px solid #0f0; padding: 5px 10px; cursor: pointer;">Reset Game</button>
+        <button id="tic-tac-toe-reset"
+          style="background: black; color: #0f0; border: 1px solid #0f0; padding: 5px 10px; cursor: pointer;">Reset
+          Game</button>
       </div>
-      
+
       <!-- Memory Game -->
       <div id="memory-game" class="game-container">
         <h2 class="game-title">Memory Game</h2>
-        <div id="memory-board" style="display: grid; grid-template-columns: repeat(4, 100px); gap: 10px; margin: 20px auto;"></div>
+        <div id="memory-board"
+          style="display: grid; grid-template-columns: repeat(4, 100px); gap: 10px; margin: 20px auto;"></div>
         <div class="game-message" id="memory-message">Find all matching pairs!</div>
-        <button id="memory-reset" style="background: black; color: #0f0; border: 1px solid #0f0; padding: 5px 10px; cursor: pointer;">Reset Game</button>
+        <button id="memory-reset"
+          style="background: black; color: #0f0; border: 1px solid #0f0; padding: 5px 10px; cursor: pointer;">Reset
+          Game</button>
       </div>
 
       <!-- Minesweeper Game -->
@@ -237,8 +244,12 @@
         <h2 class="game-title">Minesweeper</h2>
         <div class="game-message" id="minesweeper-message">Click to reveal cells. Right-click to flag.</div>
         <div class="minesweeper-board" id="minesweeper-board" style="display: grid; gap: 2px; margin: 20px auto;"></div>
-        <button id="minesweeper-reset" style="background: black; color: #0f0; border: 1px solid #0f0; padding: 5px 10px; cursor: pointer;">Reset Game</button>
-        <div id="explosion" style="position: absolute; width: 100px; height: 100px; background: radial-gradient(circle, red, yellow); border-radius: 50%; pointer-events: none; display: none; z-index: 100;"></div>
+        <button id="minesweeper-reset"
+          style="background: black; color: #0f0; border: 1px solid #0f0; padding: 5px 10px; cursor: pointer;">Reset
+          Game</button>
+        <div id="explosion"
+          style="position: absolute; width: 100px; height: 100px; background: radial-gradient(circle, red, yellow); border-radius: 50%; pointer-events: none; display: none; z-index: 100;">
+        </div>
       </div>
     </div>
   </div>
@@ -248,7 +259,8 @@
   <footer>
     <div class="social-links">
       <a href="https://github.com/sepehrbehroozi" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/sepehrbehroozi" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+      <a href="https://linkedin.com/in/sepehrbehroozi" target="_blank" class="social-icon"><i
+          class="fab fa-linkedin"></i></a>
       <a href="mailto:sepehrbehroozi@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
     </div>
     <p>© 2025 Sepehr Behroozi. All rights reserved.</p>
@@ -258,12 +270,12 @@
     const content = document.getElementById('content');
     const commandInput = document.getElementById('command-input');
     const gameContainers = document.querySelectorAll('.game-container');
-    
+
     // Function to scroll terminal down
     function scrollTerminalDown() {
       content.scrollTop = content.scrollHeight;
     }
-    
+
     // Modify addOutput function to include scrolling
     function addOutput(text, className = '') {
       const div = document.createElement('div');
@@ -274,47 +286,47 @@
       content.appendChild(div);
       scrollTerminalDown(); // Scroll down after adding new content
     }
-    
+
     const ticTacToeContainer = document.getElementById('tic-tac-toe');
     const ticTacToeCells = document.querySelectorAll('.tic-tac-toe-cell');
     const ticTacToeMessage = document.getElementById('tic-tac-toe-message');
     const ticTacToeReset = document.getElementById('tic-tac-toe-reset');
-    
+
     const memoryContainer = document.getElementById('memory-game');
     const memoryBoard = document.getElementById('memory-board');
     const memoryMessage = document.getElementById('memory-message');
     const memoryReset = document.getElementById('memory-reset');
-    
+
     let currentPlayer = 'X';
     let gameBoard = ['', '', '', '', '', '', '', '', ''];
     let gameActive = true;
-    
+
     let memoryCards = [];
     let flippedCards = [];
     let matchedPairs = 0;
     let memoryGameActive = false;
-    
+
     let commandHistory = [];
     let historyIndex = -1;
-    
+
     function init() {
       commandInput.addEventListener('keydown', handleCommandInput);
       ticTacToeReset.addEventListener('click', resetTicTacToe);
       memoryReset.addEventListener('click', initMemoryGame);
       minesweeperReset.addEventListener('click', initMinesweeper);
-      
+
       ticTacToeCells.forEach(cell => {
         cell.addEventListener('click', handleTicTacToeCellClick);
       });
-      
+
       initMemoryGame();
       initMinesweeper();
-      
+
       addOutput('Welcome to Retro Terminal Games!');
       addOutput('Type "help" to see available commands.');
       scrollTerminalDown(); // Scroll down when the page loads
     }
-    
+
     function handleCommandInput(e) {
       if (e.key === 'Enter') {
         const command = commandInput.value.trim();
@@ -341,15 +353,15 @@
         }
       }
     }
-    
+
     function processCommand(command) {
       addOutput(`$ ${command}`, 'command');
-      
+
       const parts = command.toLowerCase().split(' ');
       const cmd = parts[0];
       const args = parts.slice(1);
-      
-      switch(cmd) {
+
+      switch (cmd) {
         case 'help':
           showHelp();
           break;
@@ -378,7 +390,7 @@
           addOutput('Type "help" for available commands.');
       }
     }
-    
+
     function showHelp() {
       addOutput('Available commands:');
       addHelpItem('help', 'Show this help message');
@@ -389,18 +401,18 @@
       addHelpItem('exit', 'Exit current game');
       addHelpItem('list/ls', 'List available games');
     }
-    
+
     function addHelpItem(command, description) {
       const div = document.createElement('div');
       div.className = 'help-item';
       div.innerHTML = `<span class="help-command">${command}</span> - ${description}`;
       content.appendChild(div);
     }
-    
+
     function clearTerminal() {
       content.innerHTML = '';
     }
-    
+
     function showGame(gameId) {
       hideAllGames();
       document.getElementById(gameId).style.display = 'block';
@@ -413,90 +425,90 @@
         initMemoryGame();
       }
     }
-    
+
     function hideAllGames() {
       gameContainers.forEach(container => {
         container.style.display = 'none';
       });
     }
-    
+
     function listGames() {
       addOutput('Available games:');
       addOutput('- tictactoe: Classic Tic Tac Toe game');
       addOutput('- memory: Card matching memory game');
       addOutput('- minesweeper: Classic Minesweeper game');
     }
-    
+
     function handleTicTacToeCellClick(e) {
       const index = e.target.getAttribute('data-index');
-      
+
       if (gameBoard[index] !== '' || !gameActive) {
         return;
       }
-      
+
       makeMove(index, currentPlayer);
-      
+
       if (checkWin(currentPlayer)) {
         ticTacToeMessage.textContent = `You win!`;
         gameActive = false;
         return;
       }
-      
+
       if (checkDraw()) {
         ticTacToeMessage.textContent = 'Game ended in a draw!';
         gameActive = false;
         return;
       }
-      
+
       if (gameActive) {
         setTimeout(() => {
           const aiMove = getAIMove();
           makeMove(aiMove, 'O');
-          
+
           if (checkWin('O')) {
             ticTacToeMessage.textContent = 'AI wins!';
             gameActive = false;
             return;
           }
-          
+
           if (checkDraw()) {
             ticTacToeMessage.textContent = 'Game ended in a draw!';
             gameActive = false;
             return;
           }
-        }, 500); 
+        }, 500);
       }
     }
-    
+
     function makeMove(index, player) {
       gameBoard[index] = player;
       ticTacToeCells[index].textContent = player;
     }
-    
+
     function checkWin(player) {
       const winConditions = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8], 
-        [0, 3, 6], [1, 4, 7], [2, 5, 8], 
-        [0, 4, 8], [2, 4, 6]             
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+        [0, 4, 8], [2, 4, 6]
       ];
-      
+
       return winConditions.some(condition => {
         return condition.every(index => {
           return gameBoard[index] === player;
         });
       });
     }
-    
+
     function checkDraw() {
       return gameBoard.every(cell => cell !== '');
     }
-    
+
     function getAIMove() {
       //Simple AI that:
       //1. First tries to win
       //2. Then blocks player from winning
       //3. Otherwise makes a random move
-      
+
       for (let i = 0; i < 9; i++) {
         if (gameBoard[i] === '') {
           gameBoard[i] = 'O';
@@ -507,7 +519,7 @@
           gameBoard[i] = '';
         }
       }
-      
+
       for (let i = 0; i < 9; i++) {
         if (gameBoard[i] === '') {
           gameBoard[i] = 'X';
@@ -518,47 +530,47 @@
           gameBoard[i] = '';
         }
       }
-      
+
       if (gameBoard[4] === '') {
         return 4;
       }
-      
+
       const corners = [0, 2, 6, 8];
       const availableCorners = corners.filter(i => gameBoard[i] === '');
       if (availableCorners.length > 0) {
         return availableCorners[Math.floor(Math.random() * availableCorners.length)];
       }
-      
+
       const availableSpots = gameBoard.map((spot, index) => spot === '' ? index : null).filter(val => val !== null);
       return availableSpots[Math.floor(Math.random() * availableSpots.length)];
     }
-    
+
     function resetTicTacToe() {
       gameBoard = ['', '', '', '', '', '', '', '', ''];
       gameActive = true;
       currentPlayer = 'X';
       ticTacToeMessage.textContent = `Your turn (X)`;
-      
+
       ticTacToeCells.forEach(cell => {
         cell.textContent = '';
       });
     }
-    
+
     function initMemoryGame() {
       memoryBoard.innerHTML = '';
       flippedCards = [];
       matchedPairs = 0;
       memoryGameActive = true;
       memoryMessage.textContent = 'Find all matching pairs!';
-      
+
       const symbols = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
       memoryCards = [...symbols, ...symbols];
-      
+
       for (let i = memoryCards.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [memoryCards[i], memoryCards[j]] = [memoryCards[j], memoryCards[i]];
       }
-      
+
       memoryCards.forEach((symbol, index) => {
         const card = document.createElement('div');
         card.className = 'memory-card';
@@ -573,28 +585,28 @@
         card.style.alignItems = 'center';
         card.style.cursor = 'pointer';
         card.style.fontSize = '24px';
-        card.textContent = ''; 
-        
+        card.textContent = '';
+
         card.addEventListener('click', () => flipCard(card));
         memoryBoard.appendChild(card);
       });
     }
-    
+
     function flipCard(card) {
       if (!memoryGameActive || flippedCards.length >= 2 || card.textContent !== '') {
         return;
       }
-      
+
       card.textContent = card.dataset.symbol;
       flippedCards.push(card);
-      
+
       if (flippedCards.length === 2) {
         const [card1, card2] = flippedCards;
-        
+
         if (card1.dataset.symbol === card2.dataset.symbol) {
           matchedPairs++;
           flippedCards = [];
-          
+
           if (matchedPairs === 8) {
             memoryMessage.textContent = 'Congratulations! You won!';
             memoryGameActive = false;
@@ -613,11 +625,12 @@
         }
       }
     }
-    
+
     window.onload = init;
   </script>
   <script src="script.js"></script>
   <div id="explosion-overlay"></div>
   <div id="game-over-message">YOU LOSE!</div>
 </body>
+
 </html>

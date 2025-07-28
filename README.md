@@ -1,7 +1,9 @@
 # my-personal-website
+
 This is the website for my personal portfolio!
 
 # Features
+
 1. About Me
 2. Education and Achievements
 3. Experience
@@ -10,6 +12,7 @@ This is the website for my personal portfolio!
 6. Contact
 
 # TODO
+
 1. Memes-DONE
 2. Games-DONE
 3. Blog

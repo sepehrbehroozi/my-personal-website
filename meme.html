@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -25,7 +26,8 @@
   <link rel="stylesheet" href="style.css" />
   <style>
     .meme-container {
-      position: relative; /* Add this to contain the emojis */
+      position: relative;
+      /* Add this to contain the emojis */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -34,20 +36,20 @@
       padding: 2em;
       text-align: center;
     }
-    
+
     .meme-title {
       color: #974579;
       margin-bottom: 1em;
     }
-    
+
     .meme-image {
       max-width: 100%;
       max-height: 70vh;
       border-radius: 10px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       border: 5px solid white;
     }
-    
+
     .back-link {
       display: inline-block;
       margin-top: 2em;
@@ -59,47 +61,54 @@
       border-radius: 5px;
       transition: all 0.3s ease;
     }
-    
+
     .back-link:hover {
       background-color: #974579;
       color: white;
     }
 
     .emoji {
-    position: fixed;
-    font-size: 2.5rem; /* Larger emojis */
-    pointer-events: none;
-    z-index: 100;
-    animation: float 6s linear infinite; /* Longer duration */
-    opacity: 0.8;
-    will-change: transform; /* Optimize animation */
-  }
-  
-  @keyframes float {
-    0% {
-      transform: translate(0, 0) rotate(0deg) scale(0.5);
-      opacity: 0;
+      position: fixed;
+      font-size: 2.5rem;
+      /* Larger emojis */
+      pointer-events: none;
+      z-index: 100;
+      animation: float 6s linear infinite;
+      /* Longer duration */
+      opacity: 0.8;
+      will-change: transform;
+      /* Optimize animation */
     }
-    10% {
-      opacity: 0.9;
-      transform: scale(1.2);
+
+    @keyframes float {
+      0% {
+        transform: translate(0, 0) rotate(0deg) scale(0.5);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.9;
+        transform: scale(1.2);
+      }
+
+      90% {
+        opacity: 0.7;
+      }
+
+      100% {
+        transform:
+          translate(var(--random-x), var(--random-y)) rotate(720deg)
+          /* More rotation */
+          scale(0.8);
+        opacity: 0;
+      }
     }
-    90% {
-      opacity: 0.7;
-    }
-    100% {
-      transform: 
-        translate(var(--random-x), var(--random-y)) 
-        rotate(720deg) /* More rotation */
-        scale(0.8);
-      opacity: 0;
-    }
-  }
   </style>
 </head>
+
 <body>
   <div class="cursor-trail"></div>
-  
+
   <div class="meme-container">
     <h1 class="meme-title">Meme of the Day</h1>
     <img id="memeImage" class="meme-image" alt="Meme of the Day">
@@ -116,45 +125,45 @@
       'friday.webp',
       'saturday.webp'
     ];
-    
+
     const dayOfWeek = new Date().getDay();
-    
+
     document.getElementById('memeImage').src = `memes/${memeFiles[dayOfWeek]}`;
-    
+
     // Create flying emojis
     function createEmojis() {
       const emojis = ['😂', '🤣', '😆', '😄', '😅', '🤪', '😹', '💀']; // More emoji variety
       const container = document.querySelector('body'); // Use body for full screen spread
-      
+
       // Create more emojis
       for (let i = 0; i < 20; i++) {
         const emoji = document.createElement('div');
         emoji.className = 'emoji';
         emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-        
+
         // Much wider random movement (up to 500px in any direction)
         const randomX = (Math.random() > 0.5 ? 1 : -1) * (300 + Math.random() * 500);
         const randomY = (Math.random() > 0.5 ? 1 : -1) * (300 + Math.random() * 500);
-        
+
         emoji.style.setProperty('--random-x', `${randomX}px`);
         emoji.style.setProperty('--random-y', `${randomY}px`);
-        
+
         // Start from random positions across the entire viewport
         emoji.style.left = `${Math.random() * 100}%`;
         emoji.style.top = `${Math.random() * 100}%`;
-        
+
         // Random animation characteristics
         emoji.style.animationDuration = `${4 + Math.random() * 5}s`;
         emoji.style.animationDelay = `${Math.random() * 3}s`;
         emoji.style.fontSize = `${1.5 + Math.random() * 2}rem`;
-        
+
         // Random color variation for some emojis
         if (Math.random() > 0.7) {
           emoji.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
         }
-        
+
         document.body.appendChild(emoji);
-        
+
         // Cleanup and continuous creation
         emoji.addEventListener('animationend', () => {
           emoji.remove();
@@ -164,7 +173,7 @@
         });
       }
     }
-    
+
     // Start with more emojis and create more frequently
     window.addEventListener('load', () => {
       createEmojis();
@@ -180,7 +189,8 @@
       document.querySelectorAll('.emoji').forEach(e => e.remove());
     });
   </script>
-  
+
   <script src="script.js"></script>
 </body>
+
 </html>
