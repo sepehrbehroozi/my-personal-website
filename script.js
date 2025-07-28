@@ -135,6 +135,65 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", () => {
     resumeDropdown.style.display = "none";
   });
+
+  const contactForm = document.querySelector('.contact-form');
+  
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = contactForm.querySelector('.submit-btn');
+      const originalBtnText = submitBtn.innerHTML;
+      
+      // Show loading state
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      submitBtn.disabled = true;
+      
+      try {
+        const formData = new FormData(contactForm);
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          // Show success message
+          const successMsg = document.createElement('div');
+          successMsg.className = 'form-success';
+          successMsg.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully!';
+          contactForm.appendChild(successMsg);
+          
+          // Reset form
+          contactForm.reset();
+          
+          // Remove success message after 5 seconds
+          setTimeout(() => {
+            successMsg.remove();
+          }, 5000);
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        // Show error message
+        const errorMsg = document.createElement('div');
+        errorMsg.className = 'form-error';
+        errorMsg.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed to send message. Please try again later.';
+        contactForm.appendChild(errorMsg);
+        
+        // Remove error message after 5 seconds
+        setTimeout(() => {
+          errorMsg.remove();
+        }, 5000);
+      } finally {
+        // Reset button state
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+      }
+    });
+  }
 });
 
 // Event listener for window load to create stars
