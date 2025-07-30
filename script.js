@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
           // Show success message
           const successMsg = document.createElement('div');
           successMsg.className = 'form-success';
-          successMsg.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully!';
+          successMsg.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully! I will get back to you soon.';
           contactForm.appendChild(successMsg);
           
           // Reset form
