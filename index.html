@@ -27,7 +27,6 @@
   <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -35,22 +34,9 @@
   <div class="cursor-trail"></div>
 
   <header>
-    <!--Contact information-->
-    <div class="social-header">
-      <a href="https://linkedin.com/in/sepehrbehroozi" target="_blank" class="social-icon-header" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/sepehrbehroozi" target="_blank" class="social-icon-header" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="mailto:sepehrbehroozi@gmail.com" class="social-icon-header" aria-label="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-    <!-- Header section containing profile image and navigation -->
-    <div class="header-container">
-      <!-- Profile image container with resume button -->
-      <div class="profile-section">
+    <div class="header-main">
+      <!-- Left column: Socials + Profile -->
+      <div class="header-left">
         <div class="profile-img-container">
           <img src="personal_photos/profile.jpg" alt="Sepehr Behroozi" class="profile-pic" />
           <div class="profile-overlay">
@@ -66,13 +52,22 @@
             <a href="resumes/ML_Resume.pdf" target="_blank" class="resume-option">ML Resume</a>
           </div>
         </div>
+        <div class="social-header">
+          <a href="https://linkedin.com/in/sepehrbehroozi" target="_blank" class="social-icon-header" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/sepehrbehroozi" target="_blank" class="social-icon-header" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:sepehrbehroozi@gmail.com" class="social-icon-header" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
       </div>
-
-      <div class="header-content">
-        <!-- Header content with name and typewriter effect -->
+      <!-- Right column: Name, description, nav -->
+      <div class="header-right">
         <h1 class="text-outline">Sepehr Behroozi Esfahani</h1>
-        <p class="typewriter-long text-outline">Computing Science Spec. Graduate @UAlberta | Software Engineer | Web
-          Developer | AI Researcher</p>
+        <p class="typewriter-long text-outline">Computing Science Spec. Graduate @UAlberta | Software/Web Developer | AI Researcher</p>
         <div class="header-nav">
           <!-- Navigation links -->
           <nav>
