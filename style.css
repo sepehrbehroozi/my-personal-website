@@ -938,46 +938,17 @@ html {
   }
 
   .typewriter-long {
-    font-size: 1em;
+    font-size: 0.9em;
   }
 
-  .profile-pic {
-    width: 80px;
-    height: 80px;
-  }
-
-  .skills-container {
-    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-  }
-
-  .skill-card {
-    padding: 0.5em;
-    min-height: 60px;
-  }
-
-  .skill-card i {
-    font-size: 1.2em;
-  }
-
-  .skill-card span {
-    font-size: 0.6em;
-  }
-
-  .contact-card {
-    padding: 1em;
-  }
-
-  .contact-card i {
-    font-size: 1.2em;
-  }
-
-  .contact-card p {
+  nav a {
     font-size: 0.8em;
+    padding: 0.2em 0.5em;
   }
 
-  .submit-btn {
-    font-size: 0.8em;
-    padding: 0.6em 1.2em;
+  /* Add extra bottom margin to footer to prevent overlap with back-to-top button */
+  footer {
+    margin-bottom: 60px;
   }
 }
 
@@ -1162,6 +1133,11 @@ html {
   nav a {
     font-size: 0.8em;
     padding: 0.2em 0.5em;
+  }
+
+  /* Add extra bottom margin to footer to prevent overlap with back-to-top button */
+  footer {
+    margin-bottom: 60px;
   }
 }
 
@@ -1438,6 +1414,29 @@ html {
   align-items: center;
   gap: 10px;
   animation: fadeIn 0.3s ease;
+}
+
+.form-success {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+  border: 1px solid #28a745;
+}
+
+.form-error {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+  border: 1px solid #dc3545;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .form-success {
