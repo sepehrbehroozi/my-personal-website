@@ -946,9 +946,9 @@ html {
     padding: 0.2em 0.5em;
   }
 
-  /* Add extra bottom margin to footer to prevent overlap with back-to-top button */
+  /* Use padding-bottom instead of margin-bottom for footer */
   footer {
-    margin-bottom: 60px;
+    padding-bottom: 80px;
   }
 }
 
@@ -1137,7 +1137,7 @@ html {
 
   /* Add extra bottom margin to footer to prevent overlap with back-to-top button */
   footer {
-    margin-bottom: 60px;
+    padding-bottom: 80px;
   }
 }
 
