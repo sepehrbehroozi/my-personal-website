@@ -1675,3 +1675,71 @@ html {
 .blog-btn, .blog-btn::before, .blog-btn:hover, .blog-btn:focus, .blog-btn:hover::before, .blog-btn:focus::before {
   display: none !important;
 }
+
+/* Uiverse.io Send Button Styles (scoped to .uiverse-send-btn) */
+.uiverse-send-btn {
+  font-family: inherit;
+  font-size: 20px;
+  background: #722750;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+  position: relative;
+  min-width: 120px;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(99, 102, 241, 0.2);
+}
+
+.uiverse-send-btn span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.uiverse-send-btn .svg-wrapper-1 {
+  display: flex;
+  align-items: center;
+}
+
+.uiverse-send-btn .svg-wrapper {
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.uiverse-send-btn svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.uiverse-send-btn:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.uiverse-send-btn:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.uiverse-send-btn:hover span {
+  transform: translateX(5em);
+}
+
+.uiverse-send-btn:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+  to {
+    transform: translateY(-0.1em);
+  }
+}
