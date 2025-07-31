@@ -143,10 +143,10 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       
       const submitBtn = contactForm.querySelector('.submit-btn');
-      const originalBtnText = submitBtn.innerHTML;
+      const originalBtnHTML = submitBtn.innerHTML;
       
-      // Show loading state
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      // Show loading state (replace icon with spinner)
+      submitBtn.innerHTML = '<div class="svg-wrapper-1"><div class="svg-wrapper"><i class="fas fa-spinner fa-spin"></i></div></div><span>Sending...</span>';
       submitBtn.disabled = true;
       
       try {
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 5000);
       } finally {
         // Reset button state
-        submitBtn.innerHTML = originalBtnText;
+        submitBtn.innerHTML = originalBtnHTML;
         submitBtn.disabled = false;
       }
     });
