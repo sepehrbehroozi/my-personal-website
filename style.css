@@ -1466,30 +1466,35 @@ html {
 .blog-btn {
   position: relative;
   z-index: 3;
-  border: 2.5px solid #ffcc00;
-  color: #ffcc00 !important;
+  border: 4px solid #974579; /* Match nav a border thickness */
+  color: #974579 !important;
   background: #1e1e1e;
   font-weight: bold;
-  box-shadow: 0 0 12px #ffcc0088;
+  box-shadow: 0 0 12px #97457988;
   overflow: hidden;
   padding: 0.4em 0.9em;   /* Match nav a padding */
   border-radius: 8px;     /* Match nav a border-radius */
-  vertical-align: middle; /* Align with other nav buttons */
-  display: inline-block;  /* Ensure inline alignment */
+  vertical-align: middle;
+  display: inline-block;
   line-height: 1.2;       /* Match nav a line-height */
-  height: auto;           /* Remove fixed height */
+  font-size: 1em;         /* Match nav a font size */
+  height: auto;
+  transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Match nav a text-shadow */
+  text-decoration: none;
+  font-family: inherit;   /* Match nav a font */
 }
 
 .blog-btn::before {
   content: "";
   position: absolute;
   inset: -4px;
-  border-radius: 10px; /* Match nav a border-radius */
-  border: 2.5px solid transparent;
-  border-top: 2.5px solid #ffcc00;
-  border-right: 2.5px solid #ffcc00;
-  border-bottom: 2.5px solid #ffcc00;
-  border-left: 2.5px solid transparent;
+  border-radius: 10px;
+  border: 2px solid transparent; /* Match border thickness */
+  border-top: 2px solid #ffcc00;
+  border-right: 2px solid #974579;
+  border-bottom: 2px solid #ffcc00;
+  border-left: 2px solid transparent;
   animation: blog-btn-spin 1.2s linear infinite;
   pointer-events: none;
   z-index: 1;
@@ -1508,238 +1513,16 @@ html {
 
 .blog-btn:hover,
 .blog-btn:focus {
-  background: #ffcc00;
-  color: #1e1e1e !important;
+  background: #974579;
+  color: #fff !important;
   border-color: #ffcc00;
   box-shadow: 0 0 20px #ffcc00cc;
 }
 
 .blog-btn:hover::before,
 .blog-btn:focus::before {
-  border-top: 4px solid #1e1e1e;
-  border-right: 2.5px solid transparent;
-  border-bottom: 4px solid #1e1e1e;
-  border-left: 2.5px solid transparent;
-}
-
-/* Voltage Button Styles - From Uiverse.io by Pradeepsaranbishnoi */
-.voltage-button {
-  position: relative;
-}
-
-.voltage-button button {
-  color: white;
-  background: #580f58;
-  padding: 1rem 3rem 1rem 3rem;
-  border-radius: 5rem;
-  border: 5px solid #5978f3;
-  font-size: 1.2rem;
-  line-height: 1em;
-  letter-spacing: 0.075em;
-  transition: background 0.3s;
-}
-
-.voltage-button button:hover {
-  cursor: pointer;
-  background: #7a1375;
-}
-
-/* Always show SVG and dots (animation always runs) */
-.voltage-button svg {
-  display: block;
-  position: absolute;
-  top: -0.75em;
-  left: -0.25em;
-  width: calc(100% + 0.5em);
-  height: calc(100% + 1.5em);
-  pointer-events: none;
-  opacity: 1; /* Always visible */
-  transition: opacity 0.4s;
-  transition-delay: 0.1s;
-}
-
-.voltage-button .dots {
-  opacity: 1; /* Always visible */
-  transition: opacity 0.3s;
-  transition-delay: 0.4s;
-}
-
-.voltage-button svg path {
-  stroke-dasharray: 100;
-  filter: url("#glow");
-}
-
-.voltage-button svg path.line-1 {
-  stroke: #eae353;
-  stroke-dashoffset: 0;
-  animation: spark-1 3s linear infinite;
-}
-
-.voltage-button svg path.line-2 {
-  stroke: #6bfeff;
-  stroke-dashoffset: 500;
-  animation: spark-2 3s linear infinite;
-}
-
-.voltage-button .dots .dot {
-  width: 1rem;
-  height: 1rem;
-  background: white;
-  border-radius: 100%;
-  position: absolute;
-  opacity: 0;
-}
-
-.voltage-button .dots .dot-1 {
-  top: 0;
-  left: 20%;
-  animation: fly-up 3s linear infinite;
-}
-
-.voltage-button .dots .dot-2 {
-  top: 0;
-  left: 55%;
-  animation: fly-up 3s linear infinite;
-  animation-delay: 0.5s;
-}
-
-.voltage-button .dots .dot-3 {
-  top: 0;
-  left: 80%;
-  animation: fly-up 3s linear infinite;
-  animation-delay: 1s;
-}
-
-.voltage-button .dots .dot-4 {
-  bottom: 0;
-  left: 30%;
-  animation: fly-down 3s linear infinite;
-  animation-delay: 2.5s;
-}
-
-.voltage-button .dots .dot-5 {
-  bottom: 0;
-  left: 65%;
-  animation: fly-down 3s linear infinite;
-  animation-delay: 1.5s;
-}
-
-@keyframes spark-1 {
-  to {
-    stroke-dashoffset: -1000;
-  }
-}
-
-@keyframes spark-2 {
-  to {
-    stroke-dashoffset: -500;
-  }
-}
-
-@keyframes fly-up {
-  0% {
-    opacity: 0;
-    transform: translateY(0) scale(0.2);
-  }
-
-  5% {
-    opacity: 1;
-    transform: translateY(-1.5rem) scale(0.4);
-  }
-
-  10%,
-  100% {
-    opacity: 0;
-    transform: translateY(-3rem) scale(0.2);
-  }
-}
-
-@keyframes fly-down {
-  0% {
-    opacity: 0;
-    transform: translateY(0) scale(0.2);
-  }
-
-  5% {
-    opacity: 1;
-    transform: translateY(1.5rem) scale(0.4);
-  }
-
-  10%,
-  100% {
-    opacity: 0;
-    transform: translateY(3rem) scale(0.2);
-  }
-}
-
-.blog-btn, .blog-btn::before, .blog-btn:hover, .blog-btn:focus, .blog-btn:hover::before, .blog-btn:focus::before {
-  display: none !important;
-}
-
-/* Uiverse.io Send Button Styles (scoped to .uiverse-send-btn) */
-.uiverse-send-btn {
-  font-family: inherit;
-  font-size: 20px;
-  background: #722750;
-  color: white;
-  padding: 0.7em 1em;
-  padding-left: 0.9em;
-  display: flex;
-  align-items: center;
-  border: none;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: all 0.2s;
-  cursor: pointer;
-  position: relative;
-  min-width: 120px;
-  justify-content: center;
-  box-shadow: 0 3px 6px rgba(99, 102, 241, 0.2);
-}
-
-.uiverse-send-btn span {
-  display: block;
-  margin-left: 0.3em;
-  transition: all 0.3s ease-in-out;
-}
-
-.uiverse-send-btn .svg-wrapper-1 {
-  display: flex;
-  align-items: center;
-}
-
-.uiverse-send-btn .svg-wrapper {
-  display: block;
-  transition: transform 0.3s ease-in-out;
-}
-
-.uiverse-send-btn svg {
-  display: block;
-  transform-origin: center center;
-  transition: transform 0.3s ease-in-out;
-}
-
-.uiverse-send-btn:hover .svg-wrapper {
-  animation: fly-1 0.6s ease-in-out infinite alternate;
-}
-
-.uiverse-send-btn:hover svg {
-  transform: translateX(1.2em) rotate(45deg) scale(1.1);
-}
-
-.uiverse-send-btn:hover span {
-  transform: translateX(5em);
-}
-
-.uiverse-send-btn:active {
-  transform: scale(0.95);
-}
-
-@keyframes fly-1 {
-  from {
-    transform: translateY(0.1em);
-  }
-  to {
-    transform: translateY(-0.1em);
-  }
+  border-top: 4px solid #fff;
+  border-right: 2px solid transparent;
+  border-bottom: 4px solid #fff;
+  border-left: 2px solid transparent;
 }
