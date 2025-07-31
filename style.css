@@ -1672,13 +1672,6 @@ html {
   }
 }
 
-/* Remove old blog button style if desired */
-/*
 .blog-btn, .blog-btn::before, .blog-btn:hover, .blog-btn:focus, .blog-btn:hover::before, .blog-btn:focus::before {
   display: none !important;
 }
-*/
-.blog-btn, .blog-btn::before, .blog-btn:hover, .blog-btn:focus, .blog-btn:hover::before, .blog-btn:focus::before {
-  display: none !important;
-}
-*/
